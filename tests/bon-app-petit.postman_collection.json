@@ -1,0 +1,691 @@
+{
+	"info": {
+		"_postman_id": "839792f8-f537-4dd5-b9b0-370afb2e6f37",
+		"name": "lba-case-study",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ingredient",
+			"item": [
+				{
+					"name": "Get ingredients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/ingredient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"ingredient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ingredient by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/ingredient/:ingredientId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"ingredient",
+								":ingredientId"
+							],
+							"variable": [
+								{
+									"key": "ingredientId",
+									"value": "60f55eca5f108b4920bc0ace"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create ingredient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\",\r\n    \"desc\": \"desc\",\r\n    \"quantity\": 3,\r\n    \"price\": 42.42,\r\n    \"img\": \"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pixsy.com%2Facademy%2Fimage-user%2Fverify-image-source-copyright-owner%2F&psig=AOvVaw1AgzdSvUEXwubBSOAlGKnT&ust=1628725299142000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCNiT1dnQp_ICFQAAAAAdAAAAABAD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/ingredient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"ingredient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit ingredient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\",\r\n    \"desc\": \"desc\",\r\n    \"quantity\": 3554454,\r\n    \"price\": 42.42,\r\n    \"img\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/ingredient/:ingredientId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"ingredient",
+								":ingredientId"
+							],
+							"variable": [
+								{
+									"key": "ingredientId",
+									"value": "60f55f635f9ee94394ff35df"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete ingredient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/ingredient/:ingredientId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"ingredient",
+								":ingredientId"
+							],
+							"variable": [
+								{
+									"key": "ingredientId",
+									"value": "60f55f635f9ee94394ff35df"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dish",
+			"item": [
+				{
+					"name": "Get dishes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/dish",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"dish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add ingredient to dish",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n   \"dishId\": \"610ac1383541510a10330278\",\r\n   \"ingredientRef\": \"60f5780831a96147f8965295\",\r\n   \"quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/dish/ingredient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"dish",
+								"ingredient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get dish by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/dish/:dishId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"dish",
+								":dishId"
+							],
+							"variable": [
+								{
+									"key": "dishId",
+									"value": "610d708fea1b98346cb75740"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ingredient from dish by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/dish/ingredient/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"dish",
+								"ingredient",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6114642f48048447b0502ee2",
+									"description": "id of the ingredient inside the dish  (not the reference)"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove dish",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/dish/:dishId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"dish",
+								":dishId"
+							],
+							"variable": [
+								{
+									"key": "dishId",
+									"value": "610dd18d7861792594377115"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove ingredient from dish",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/dish/ingredient/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"dish",
+								"ingredient",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new dish",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"DishTest2\",\r\n    \"desc\": \"desc\",\r\n    \"quantity\": 2,\r\n    \"price\": 0.2,\r\n    \"img\": \"\",\r\n    \"ingredients\": [{\"ingredientRef\":\"60f57289815db9413c7e3872\", \"quantity\":3 },\r\n    {\"ingredientRef\":\"60f57289815db9413c7e3872\", \"quantity\":6 }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/dish",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"dish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit dish",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"namefff\",\r\n    \"desc\": \"desccc\",\r\n    \"quantity\": 3554454,\r\n    \"price\": 42.42,\r\n    \"img\": \"\",\r\n    \"ingredients\": [{\"ingredientRef\":\"60f55f635f9ee94394ff35df\", \"quantity\": 6}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/dish/:dishId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"dish",
+								":dishId"
+							],
+							"variable": [
+								{
+									"key": "dishId",
+									"value": "61095b4ea41fea5c84c51ced"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit ingredient from dish",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"dishId\":\"6113c4780792a32118fcfec1\",\r\n    \"ingredientRef\": {\"_id\":\"60f57289815db9413c7e3872\"},\r\n    \"quantity\": 42\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/dish/ingredient/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"dish",
+								"ingredient",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6114642f48048447b0502ee2",
+									"description": "id of the ingredient inside the dish (not the reference)\n"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Menu",
+			"item": [
+				{
+					"name": "Get menus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/menu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get menu by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/menu/:menuId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"menu",
+								":menuId"
+							],
+							"variable": [
+								{
+									"key": "menuId",
+									"value": "610964d0a36eb45f904eee8b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove menu",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/menu/:menuId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"menu",
+								":menuId"
+							],
+							"variable": [
+								{
+									"key": "menuId",
+									"value": "610964bca36eb45f904eee87"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new menu",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Menu\",\r\n    \"desc\": \"desc\",\r\n    \"quantity\": 2,\r\n    \"price\": 5,\r\n    \"img\": \"\",\r\n    \"dishes\": [{\"dishRef\":\"610ac1383541510a10330278\",\"quantity\":6},{\"dishRef\":\"610d708fea1b98346cb75740\", \"quantity\":8}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/menu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add dish to menu",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n   \"menuId\": \"610964d0a36eb45f904eee8b\",\r\n   \"dishRef\": \"6113108396c19081b863d01c\",\r\n   \"quantity\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/menu/dish",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"menu",
+								"dish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit menu",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\",\r\n    \"desc\": \"desccc\",\r\n    \"quantity\": 3554454,\r\n    \"price\": 42.42,\r\n    \"img\": \"\",\r\n    \"dishes\": [{\"dishRef\":\"61095b4ea41fea5c84c51ced\", \"quantity\":6}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/menu/:menuId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"menu",
+								":menuId"
+							],
+							"variable": [
+								{
+									"key": "menuId",
+									"value": "6109650f71a1d631e4c0d921"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get dish from menu by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/menu/dish/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"menu",
+								"dish",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61145f1b6488be11208f11d4",
+									"description": "id of the dish inside the menu (not the reference)"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit dish from menu",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"dishRef\":{\"_id\":\"61095b4ea41fea5c84c51ced\"},\r\n    \"quantity\": 42\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/menu/dish/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"menu",
+								"dish",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61145f1b6488be11208f11d3",
+									"description": "id of the dish inside the menu (not the reference)"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test server",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
