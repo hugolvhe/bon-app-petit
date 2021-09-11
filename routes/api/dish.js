@@ -1,10 +1,9 @@
 import express, { Router } from "express";
 const router = Router();
 import { body, validationResult } from "express-validator";
-import mongoose from "mongoose";
 
 import Dish from "../../models/Dish.js";
-import Ingredient from "../../models/Ingredient.js";
+import Menu from "../../models/Menu.js";
 
 /**
  * @route   GET api/dish
@@ -302,6 +301,11 @@ router.delete("/:dishId", async (req, res) => {
 			return res.status(400).send({ msg: "Dish not found" });
 		}
 		dish.remove();
+		const menu = await Menu.updateMany(
+			{},
+			{ $pull: { dishes: { dishRef: req.params.dishId } } },
+			{ multi: true }
+		);
 		// Need to send an empty object
 		res.json({});
 	} catch (err) {
