@@ -101,32 +101,33 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => ({
 		});
 	},
 
-	update: (resource, params) => {
-		// If the image is not an blob, don't need to make the change
-		if (params.data.img.imgBlob) {
-			convertFileToBase64(params.data.img).then((base64Image) => {
-				const data = {
-					...params.data,
-					img: {
-						src: base64Image,
-						title: `${params.data.title}`,
-					},
-				};
-				return httpClient(`${apiUrl}/${resource}/${params.id}`, {
-					method: "PUT",
-					body: JSON.stringify(data),
-				}).then(({ json }) => ({
-					data: { ...params.data, id: json._id },
-				}));
-			});
-		}
+	update: async (resource, params) => {
 		// If there is'not image proced normally
-		return httpClient(`${apiUrl}/${resource}/${params.id}`, {
-			method: "PUT",
-			body: JSON.stringify(params.data),
-		}).then(({ json }) => ({
-			data: { ...params.data, id: json._id },
-		}));
+		if (!params.data.img) {
+			return httpClient(`${apiUrl}/${resource}/${params.id}`, {
+				method: "PUT",
+				body: JSON.stringify(params.data),
+			}).then(({ json }) => ({
+				data: { ...params.data, id: json._id },
+			}));
+		}
+		// If the image is not an blob, don't need to make the change
+		else if (params.data.img.imgBlob) {
+			const base64Image = await convertFileToBase64(params.data.img);
+			const data = {
+				...params.data,
+				img: {
+					src: base64Image,
+					title: `${params.data.title}`,
+				},
+			};
+			return httpClient(`${apiUrl}/${resource}/${params.id}`, {
+				method: "PUT",
+				body: JSON.stringify(data),
+			}).then(({ json }) => ({
+				data: { ...params.data, id: json._id },
+			}));
+		}
 	},
 	// json-server doesn't handle filters on UPDATE route, so we fallback to calling UPDATE n times instead
 	updateMany: (resource, params) =>
